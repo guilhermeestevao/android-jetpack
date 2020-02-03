@@ -3,9 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="dog"
+            type="dev.guilherme.dog.model.DogBreed" />
+        
+        <variable
+            name="palette"
+            type="dev.guilherme.dog.model.DogPalette" />
+    </data>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@{palette.color}"
         tools:context=".view.DetailFragment">
 
         <ImageView
@@ -13,12 +25,13 @@
             android:layout_alignParentTop="true"
             android:scaleType="fitCenter"
             android:minHeight="200dp"
+            android:imageUrl="@{dog.imageUrl}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/dogName"
-            android:text="dogName"
+            android:text="@{dog.dogBreed}"
             style="@style/Title"
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
@@ -28,7 +41,7 @@
 
         <TextView
             android:id="@+id/dogPurpose"
-            android:text="dogPurpose"
+            android:text="@{dog.bredFor}"
             style="@style/Text"
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
@@ -38,7 +51,7 @@
 
         <TextView
             android:id="@+id/dogTemperament"
-            android:text="dogTemperament"
+            android:text="@{dog.temperament}"
             style="@style/Text"
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
@@ -48,7 +61,7 @@
 
         <TextView
             android:id="@+id/dogLifespan"
-            android:text="dogLifespan"
+            android:text="@{dog.lifeSpan}"
             style="@style/Text"
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"

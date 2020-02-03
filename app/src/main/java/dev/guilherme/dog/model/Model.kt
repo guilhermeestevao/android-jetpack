@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "dog_breed")
+@Entity
 data class DogBreed(
 
     @SerializedName("id" )
@@ -39,3 +39,5 @@ data class DogBreed(
     @PrimaryKey(autoGenerate = true)
     var uuid: Int = 0
 }
+
+data class DogPalette(var color: Int)

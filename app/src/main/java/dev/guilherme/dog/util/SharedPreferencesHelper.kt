@@ -31,5 +31,7 @@ class SharedPreferencesHelper {
         }
     }
 
+    fun getCacheDuration() = prefs?.getString("pref_cash_duration", "")
+
     fun getUdateTime() = prefs?.getLong(PREF_TIME, 0)
 }
